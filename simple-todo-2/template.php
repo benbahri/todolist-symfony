@@ -9,7 +9,12 @@
   <ul>
     <?php foreach ($todos as $todo): ?>
     <li>
-        <?= $todo ?>
+        <?php
+            if ($todo['is_complete'] == 1)
+                echo '<del>'.$todo['todo'].'</del>';
+            else
+                echo $todo['todo'];
+        ?>
     </li>
     <?php endforeach ?>
   </ul>
